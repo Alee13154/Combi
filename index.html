@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fondo con Párrafos Centrados</title>
+  <style>
+    /* Estilo general del cuerpo */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(pixeles.png); /* Cambia esto por tu imagen o URL */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Contenedor del texto */
+    #texto {
+      max-width: 80%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para legibilidad */
+      padding: 2rem;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="texto"></div>
+
+  <script>
+    // Array de párrafos que se mostrarán
+    const parrafos = [
+      "Abi y Ale",
+      "</3",
+      "Me pensaras tanto como yo te pienso",
+      "O solo sere yo el que extraña tu amor",
+      ":(",
+      "Quisiera volver",
+      "Pero creo que ya hablas con alguien más",
+      ":,("
+
+    ];
+
+    let indice = 0;
+    const textoDiv = document.getElementById("texto");
+
+    function mostrarParrafo() {
+      textoDiv.textContent = parrafos[indice];
+      indice = (indice + 1) % parrafos.length;
+    }
+
+    mostrarParrafo(); // Mostrar el primer párrafo al cargar
+    setInterval(mostrarParrafo, 3000); // Cambiar cada 2.5 segundos
+  </script>
+</body>
+</html>
